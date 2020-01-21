@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import { Route, BrowserRouter, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import { initializeApp } from './redux/app-reducer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import Preloader from './components/Preloader/Preloader';
 
 
 class App extends Component { 
@@ -17,8 +18,10 @@ class App extends Component {
     this.props.initializeApp();
   }
   render() {
+    if (!this.props.initialized) {
+    return <Preloader />
+  }
     return (
-      <BrowserRouter>
         <div className='app-wrapper'>
           <HeaderContainer />
           <Navbar />
@@ -29,13 +32,15 @@ class App extends Component {
             <Route path='/login' render={() => <Login />} />
           </div>
         </div>
-      </BrowserRouter>
     )
   }
 }
 
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
 export default compose(
   withRouter,
-  connect(null, {initializeApp}) )(App);
+  connect(mapStateToProps, {initializeApp}) )(App);
 
-// cntrl+a , cntrl+K+F код выравнивает

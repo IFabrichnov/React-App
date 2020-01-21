@@ -4,7 +4,7 @@ const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
 
 
 let initialState = {
-  isAuth: false
+  initialized: false
 }
 
 const appReducer = (state = initialState, action) => {
@@ -23,9 +23,11 @@ const appReducer = (state = initialState, action) => {
 export const initializedSuccess = () => ({ type: INITIALIZED_SUCCESS })
 
 export const initializeApp = () => (dispatch) => {
-  dispatch(getAuthUserData());
-
-  dispatch(initializedSuccess());
+  let promise = dispatch(getAuthUserData());
+  Promise.all([promise])
+  .then( () => {
+    dispatch(initializedSuccess());
+  });
 }
 
 export default appReducer;
