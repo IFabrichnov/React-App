@@ -10,7 +10,7 @@ import Login from './components/Login/Login';
 import { initializeApp } from './redux/app-reducer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import Preloader from './components/Preloader/Preloader';
+import Preloader from './components/commons/Preloader/Preloader';
 
 
 class App extends Component { 
