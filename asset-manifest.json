@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/React-App/static/css/main.417e2200.chunk.css",
-    "main.js": "/React-App/static/js/main.f45c550c.chunk.js",
-    "main.js.map": "/React-App/static/js/main.f45c550c.chunk.js.map",
-    "runtime-main.js": "/React-App/static/js/runtime-main.dd04432a.js",
-    "runtime-main.js.map": "/React-App/static/js/runtime-main.dd04432a.js.map",
-    "static/js/2.42bde4d5.chunk.js": "/React-App/static/js/2.42bde4d5.chunk.js",
-    "static/js/2.42bde4d5.chunk.js.map": "/React-App/static/js/2.42bde4d5.chunk.js.map",
+    "main.js": "/React-App/static/js/main.7124011b.chunk.js",
+    "main.js.map": "/React-App/static/js/main.7124011b.chunk.js.map",
+    "runtime-main.js": "/React-App/static/js/runtime-main.a7b7808c.js",
+    "runtime-main.js.map": "/React-App/static/js/runtime-main.a7b7808c.js.map",
+    "static/js/2.07c1485c.chunk.js": "/React-App/static/js/2.07c1485c.chunk.js",
+    "static/js/2.07c1485c.chunk.js.map": "/React-App/static/js/2.07c1485c.chunk.js.map",
     "static/css/3.5e49b524.chunk.css": "/React-App/static/css/3.5e49b524.chunk.css",
     "static/js/3.7513b11b.chunk.js": "/React-App/static/js/3.7513b11b.chunk.js",
     "static/js/3.7513b11b.chunk.js.map": "/React-App/static/js/3.7513b11b.chunk.js.map",
     "static/css/4.39440765.chunk.css": "/React-App/static/css/4.39440765.chunk.css",
-    "static/js/4.55feb1fe.chunk.js": "/React-App/static/js/4.55feb1fe.chunk.js",
-    "static/js/4.55feb1fe.chunk.js.map": "/React-App/static/js/4.55feb1fe.chunk.js.map",
+    "static/js/4.a9543f4f.chunk.js": "/React-App/static/js/4.a9543f4f.chunk.js",
+    "static/js/4.a9543f4f.chunk.js.map": "/React-App/static/js/4.a9543f4f.chunk.js.map",
     "index.html": "/React-App/index.html",
-    "precache-manifest.984dff1125562ace62f4cd9cfaf8777d.js": "/React-App/precache-manifest.984dff1125562ace62f4cd9cfaf8777d.js",
+    "precache-manifest.14ff8d1829fa57531a78b8150d183682.js": "/React-App/precache-manifest.14ff8d1829fa57531a78b8150d183682.js",
     "service-worker.js": "/React-App/service-worker.js",
     "static/css/3.5e49b524.chunk.css.map": "/React-App/static/css/3.5e49b524.chunk.css.map",
     "static/css/4.39440765.chunk.css.map": "/React-App/static/css/4.39440765.chunk.css.map",
@@ -23,9 +23,9 @@
     "static/media/user.png": "/React-App/static/media/user.888e0066.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.dd04432a.js",
-    "static/js/2.42bde4d5.chunk.js",
+    "static/js/runtime-main.a7b7808c.js",
+    "static/js/2.07c1485c.chunk.js",
     "static/css/main.417e2200.chunk.css",
-    "static/js/main.f45c550c.chunk.js"
+    "static/js/main.7124011b.chunk.js"
   ]
 }
