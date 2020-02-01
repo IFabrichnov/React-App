@@ -14,7 +14,7 @@ const MyPosts = React.memo(props => {
     props.addPost(values.newPostElement);
   }
 
-  let postsElements = props.posts.map(p  => <Post message={p.message} likesCount={p.likesCount} />);
+  let postsElements = props.posts.map(p  => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
