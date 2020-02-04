@@ -30,13 +30,15 @@ const ProfileInfo = (props) => {
         <div>
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large || userPhoto} className={classes.mainPhoto}/>
+                <div className={classes.buttonProfile}>
                 {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
-
+                </div>
+                <div className={classes.buttonEdit}>
                 {editMode ? <ProfileDataForm initialValues={props.profile} onSubmit={onSubmit} profile={props.profile}/>
                     : <ProfileData profile={props.profile} isOwner={props.isOwner} goToEditMode={() => {
                         setEditMode(true)
                     }}/>}
-
+                </div>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>

@@ -26,7 +26,6 @@ const MyPosts = React.memo(props => {
   return (
 
     <div className={classes.postBlock}>
-      <h3>My post</h3>
       <AddProfileMessageRedux onSubmit={onAddPost} />
       <div className={classes.posts}>
         {postsElements}

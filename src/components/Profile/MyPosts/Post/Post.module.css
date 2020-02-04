@@ -1,5 +1,7 @@
   .item {
-      color: greenyellow;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
   }
 
   .item img {

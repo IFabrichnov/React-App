@@ -1,18 +1,35 @@
 .header {
     grid-area: h;
-    background-color: green;
-  }
-  
-  .header img {
-    width: 60px;
+    background-color: #4a76a8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.header img {
+    width: 80px;
     height: 60px;
-  }
+}
 
-  .loginBlock {
+.loginBlock {
     float: right;
-    
-  }
 
-  .loginBlock a {
+}
+
+.loginBlock button {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #6991ad;
+    background: white;
+    transition: all .3s ease;
+}
+
+.loginBlock button:hover {
+    background-color: #6991ad;
+    color: #fff;
+}
+
+.loginBlock a {
     color: white;
-  }
+}

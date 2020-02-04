@@ -1,14 +1,30 @@
 .nav {
     grid-area: n;
-    background-color: gray;
+    background-color: inherit;
     padding: 20px;
 }
 
+.item {
+    color: #4a76a8;
+}
+
+.item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 .item a {
-    color: white;
-    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all .2s ease;
+}
+
+.item a:hover {
+    background-color: #d3e2f3;
 }
 
 .item a.activeLink {
-    color: gold;
+    font-weight: bold;
 }

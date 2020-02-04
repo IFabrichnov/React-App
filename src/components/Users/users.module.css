@@ -10,3 +10,17 @@
 span {
     cursor: pointer;
 }
+
+.buttonFollow button {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #6991ad;
+    background: inherit;
+    transition: all .3s ease;
+    padding: 10px;
+}
+
+.buttonFollow button:hover {
+    background-color: #6991ad;
+    color: #fff;
+}
