@@ -11,16 +11,26 @@ span {
     cursor: pointer;
 }
 
-.buttonFollow button {
-    cursor: pointer;
-    border-radius: 4px;
-    border: 1px solid #6991ad;
-    background: inherit;
-    transition: all .3s ease;
-    padding: 10px;
+.userBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 900px;
+    margin: 0 auto;
 }
 
-.buttonFollow button:hover {
-    background-color: #6991ad;
-    color: #fff;
+.userProfile {
+    margin: 20px;
+}
+
+.margins {
+    margin: 0 auto;
+}
+
+.widthBlock {
+    width: 1000px;
+}
+
+.paginatorMargin {
+    margin: 0 auto;
 }

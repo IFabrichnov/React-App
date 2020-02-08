@@ -11,10 +11,10 @@ let initialState = {
     dialogs: [
         { id: 1, name: 'Ivan' },
         { id: 2, name: 'Yulia' },
-        { id: 3, name: 'Alex' },
-        { id: 4, name: 'Anton' },
-        { id: 5, name: 'Oleg' },
-        { id: 6, name: 'Alexander' }],
+        { id: 3, name: 'Oleg' },
+        { id: 4, name: 'Ramzes' },
+        { id: 5, name: 'Alexander' },
+        { id: 6, name: 'Anton' }],
     newMessageBody: ""
 }
 

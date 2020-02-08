@@ -4,6 +4,8 @@ import Preloader from '../../commons/Preloader/Preloader';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import userPhoto from '../../../assets/images/user.png'
 import ProfileDataForm from "./ProfileDataForm";
+import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
 
 const ProfileInfo = (props) => {
     let [editMode, setEditMode] = useState(false);
@@ -31,7 +33,9 @@ const ProfileInfo = (props) => {
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large || userPhoto} className={classes.mainPhoto}/>
                 <div className={classes.buttonProfile}>
-                {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                {props.isOwner &&
+
+                <input  type={"file"} onChange={onMainPhotoSelected}/>}
                 </div>
                 <div className={classes.buttonEdit}>
                 {editMode ? <ProfileDataForm initialValues={props.profile} onSubmit={onSubmit} profile={props.profile}/>
@@ -48,7 +52,14 @@ const ProfileInfo = (props) => {
 const ProfileData = (props) => {
     return <div>
         {props.isOwner && <div>
-            <button onClick={props.goToEditMode}>Edit</button>
+            <Button
+                onClick={props.goToEditMode}
+                variant="contained"
+                color="primary"
+                className={classes.button}
+            >
+                Edit
+            </Button>
         </div>}
         <div>
             <b>Full name:</b> {props.profile.fullName}

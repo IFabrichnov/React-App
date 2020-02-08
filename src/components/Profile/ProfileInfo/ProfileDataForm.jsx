@@ -2,11 +2,21 @@ import React from 'react';
 import {createField, Input, Textarea} from "../../commons/FormsControls/FormsControns";
 import {reduxForm} from "redux-form";
 import classes from './ProfileInfo.module.css';
+import Button from "@material-ui/core/Button";
 
 
 const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return <form onSubmit={handleSubmit}>
-        <div><button>Save</button></div>
+        <div>
+            <Button
+                onClick={handleSubmit}
+                variant="contained"
+                color="primary"
+                className={classes.button}
+            >
+                Save
+            </Button>
+        </div>
         { error && <div className={classes.formSummaryError}>
             {error}
         </div>}
@@ -19,11 +29,11 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
         </div>
         <div>
             <b>My Professional skills:</b>
-            {createField("My Professional skills", "lookingForAJobDescription", [], Textarea)}
+            {createField("My Professional skills", "lookingForAJobDescription", [], Input)}
         </div>
         <div>
             <b>About me:</b>
-            {createField("About me", "aboutMe", [], Textarea)}
+            {createField("About me", "aboutMe", [], Input)}
         </div>
         <div>
             <b>Contacts:</b> { Object.keys(profile.contacts).map(key => {

@@ -4,6 +4,8 @@ import Post from './Post/Post';
 import { Field, reduxForm } from 'redux-form';
 import { required, maxLengthCreator } from '../../../utils/validators';
 import { Textarea } from '../../commons/FormsControls/FormsControns';
+import Icon from "@material-ui/core/Icon";
+import Button from "@material-ui/core/Button";
 
 
 const MyPosts = React.memo(props => {
@@ -39,12 +41,21 @@ const maxLength10 = maxLengthCreator(10);
 const AddProfileMessage = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
+
         <div>
-          <Field component={Textarea} name='newPostElement' 
+          <Field component={Textarea} name='newPostElement'
           placeholder='Enter your message' validate={[required, maxLength10]} />
         </div>
         <div>
-          <button >Add post</button>
+            <Button
+                onClick={props.handleSubmit}
+                variant="contained"
+                color="primary"
+                className={classes.button}
+                endIcon={<Icon>send</Icon>}
+            >
+                Send
+            </Button>
         </div>
       </form>
   )

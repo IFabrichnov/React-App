@@ -1,29 +1,68 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import {createField, Input} from '../commons/FormsControls/FormsControns';
+import {createField, Input, InputCheckbox, InputLogin, InputPassword} from '../commons/FormsControls/FormsControns';
 import { required } from '../../utils/validators';
 import { connect } from 'react-redux';
 import {login} from '../../redux/auth-reducer';
 import { Redirect } from 'react-router-dom';
 import classes from '../commons/FormsControls/FormsControns.module.css';
+import Container from "@material-ui/core/Container";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Avatar from "@material-ui/core/Avatar";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+
 
 const LoginForm = ({handleSubmit,error, captchaUrl}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <Container component="main" maxWidth="xs">
+            <div className={classes.paper}>
+                <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon  />
+                </Avatar>
+                <Typography className={classes.alignCenter} component="h1" variant="h5">
+                    Sign up
+                </Typography>
+                <form onSubmit={handleSubmit} className={classes.form} noValidate>
+                    <Grid container spacing={2}>
 
-                {createField('email', 'email', [required], Input)}
-                {createField('Password', 'password', [required], Input, {type:'password'})}
-                {createField(null, 'rememberMe', [], Input, {type:'checkbox'}, 'remember me')}
+                        <Grid item xs={12}>
+                            {createField('email', 'email', [required], InputLogin)}
+                        </Grid>
+                        <Grid item xs={12}>
+                            {createField('Password', 'password', [required], InputPassword, {type:'password'})}
+                        </Grid>
+                        <Grid item xs={12}>
+                            <div className={classes.rememberMe}>
+                                {createField(null, 'rememberMe', [], InputCheckbox, {type:'checkbox'}, '')}
+                                <Typography className={classes.align}>
+                                    Remember me
+                                </Typography>
+                            </div>
 
-            { captchaUrl && <img src={captchaUrl} />}
-            { captchaUrl && createField('symbols from img', 'captcha', [required], Input, {})}
-          { error && <div className={classes.formSummaryError}>
-                {error}
-            </div>}
-            <div>
-                <button>Login</button>
+                        </Grid>
+                    </Grid>
+                    <Button
+                        onClick={handleSubmit}
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.signUpButton}
+                    >
+                        Sign Up
+                    </Button>
+                    { captchaUrl && <img src={captchaUrl} />}
+                    { captchaUrl && createField('symbols from img', 'captcha', [required], Input, {})}
+                    { error && <div className={classes.formSummaryError}>
+                        {error}
+                    </div>}
+                </form>
             </div>
-        </form>
+        </Container>
+
     )
 }
 
@@ -40,9 +79,8 @@ const Login = (props) => {
         return <Redirect to={"/profile"} />
     }
 
-    return <div>
-        <h1>LOGIN</h1>
-        <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+    return <div className={classes.loginBlock}>
+        <LoginReduxForm  onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>
 }
 

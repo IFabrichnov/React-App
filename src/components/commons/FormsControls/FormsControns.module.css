@@ -13,3 +13,42 @@
     padding: 5px;
     color: red;
 }
+
+.rememberMe {
+    display: flex;
+    vertical-align: center;
+}
+
+.align {
+    padding-top: 10px;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.avatar {
+    margin: 0 auto;
+}
+
+.loginBlock {
+    margin-top: 50px;
+}
+
+.inputWidth {
+    width: 395px;
+}
+
+.paper button {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #6991ad;
+    background: #4a76a8;
+    transition: all .3s ease;
+    padding: 10px;
+}
+
+.paper button:hover {
+    background-color: #6991ad;
+    color: #fff;
+}
