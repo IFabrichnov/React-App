@@ -45,21 +45,16 @@ props {
 ## Модуль **react-router-dom** 
 
 Позволяет использовать **route** (изначально всё нужно обвернуть в один блок под названием **BrowserRouter**. Он позволяет отрисовывать компоненты, отслеживания их url (
-    ```react
+ ```javascript
     <Route path='/profile' component={Profile} />
-    ```
-​    ). 
+ ```
 Чтобы задать изменение url нужно использовать тег **NavLink** (
 
-~~~javascript
-```react
+```javascript
 <NavLink to="/profile">
     Profile
 </NavLink>
 ```
-~~~
-
-​    )
 
 **BLL (Business Logic Layer) - REDUX**
 **UI (User Interface) - REACT**
@@ -80,81 +75,13 @@ let messagesData = [
 Создаём новый массив и делаем его равным массиву **messagesData** с методом **map**. Параметром будет являться каждый объект массива **messagesData**. Назовём его просто - **d**.
 
 ```javascript
-let dialogsElement = dialogsData
+let dialogsElement = messagesData
     .map(d => <DialogItem name={d.name} id={d.id} />);
-```
-
-
-
-# onClick, ref, VirtualDOM
-
-
-
-### OnClick
-
-Атрибут **OnClick** к тегу звучит как "Действие по клику"
-
-```jsx
-<button onClick={addPost}>Отправить</button>
-```
-
-Значением этого атрибута может служить анонимная функция, либо же **CallBack** функция.
-
-### CallBack
-
-**CallBack** функция - это функция обратного вызова. Т.е функция, которая вызывается другой функцией.
-
-Например. Создали функцию:
-
-```js
-`let addPost = () => { ` `
-
-`alert(text);`
-
-`}`
-```
-
-Мы можем вызвать её стандартным способом addPost(). Либо же передать её внутрь другой функции
-
-```jsx
-<button onClick={addPost}>Отправить</button>
-```
-
-***БЕЗ СКОБОК!!!***
-
-### ref
-
-```jsx
-<textarea ref={newPostElement}></textarea>
-```
-
-**ref** - это ссылка. Это тоже самое, что присвоить элементу id или класс.
-
-Команда ниже аналогична команде 
-
-```javascript
-let newPostElement = document.getElementById('id')
-```
-
-```javascript
-let newPostElement = React.createRef();
-```
-
-Но с помощью инструментов **React**. Это нужно потому, что нельзя обращаться напрямую к **DOM**. 
-
-Взаимодействовать с ссылками можно таким образом:
-
-```javascript
-let text = newPostElement.current.value;
 ```
 
 ### VirtualDOM
 
-**React** работает с **VirtualDOM**. Он подгружает компоненты <u>постепенно</u> в **DOM**, а поэтому *мы не можем знать существует ли данный элемент, к которому мы обращаемся, в DOM.*
-
-
-
-
+**React** работает с **VirtualDOM**. Он подгружает компоненты <u>постепенно</u> в **DOM**, поэтому *мы не можем знать существует ли данный элемент, к которому мы обращаемся, в DOM.*
 
 ## ReRender
 
@@ -226,7 +153,7 @@ P.S,
 
 **Action** - *действия/изменения,* 
 
-**state inside props** - *новые данные stat'a передаваемые в UI с помощью пропсов*
+**state inside props** - *новые данные state'a передаваемые в UI с помощью пропсов*
 
 
 
