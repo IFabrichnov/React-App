@@ -664,7 +664,7 @@ export default DialogsContainer;
 
 2)  Удаляем функцию reRenderEntireTree в index.js! Она нам также больше не нужна.
 
-3) Компоненту Provider оставляем, но импортируем её уже не через StoreContext, а через react-redax.
+3) Компонент Provider оставляем, но импортируем её уже не через StoreContext, а через react-redax.
 
 ```javascript
 import './index.css';
@@ -804,8 +804,6 @@ export default UsersContainer;
 # 
 
 # deep copy vs shallow copy
-
-Пойми одно, это БАЗА. База, которую ты должен знать.
 
 Создадим объект а
 
@@ -953,73 +951,7 @@ b.students = [...a.students]
 
 **При сравнении примитивов внутри ссылок a.classrom.teacher.name === bclassrom.teacher.name будут сравниваться значения примитивов.**
 
-## Axios, jQuery Ajax
 
-**jQuery**
-
-Давайте по бумажке, promise  - это обещание, которое даёт dal - ui, что возьмёт с сервера данные, взяв их оттуда, он передаёт их в виде того обещания, что он дал ранее. 
-
-![1564427302517](https://github.com/IFabrichnov/React-App/raw/master/README-IMG/1564427302517.png)
-
-```javascript
-const resultBlock = document.querySelector('#result');
-
-const clickMeButton = document.querySelector('#click-me');
-
-const pageNumberEl = document.querySelector('#page-number');
-
-clickMeButton.addEventListener('click', () => {
-  const promise = getImagesOld();
-  promise
-    .then((promise) => console.log(promise))
-})
-
-function getImagesOld() {
-  const promise = $.ajax(`https://api.unsplash.com/photos/random/?client_id=818fcd1d1047300379afae3e5c33cb9cd88b68d7d81253632ba4e09a331246a5&count=30`)
-  return promise;
-}
-
-const successGet = (data) => {
-  data.forEach(el => {
-    const img = document.createElement('img');
-    img.src = el.urls.thumb;
-    document.querySelector('#result').appendChild(img)
-  });
-}
-```
-
-Синтаксис Ajax jQuery таков:
-
-```javascript
-$.ajax(url, {settings})
-```
-
-settings  имеют вид ключ-значение. Самое основное success. Как это звучит:
-
-*Как только придёт УСПЕШНЫЙ ответ с сервера выполниться это...*
-
-success'у можно передать callback функцию
-
-```javascript
-const promise = $.ajax(`https://api.unsplash.com/photos/random/?client_id=818fcd1d1047300379afae3e5c33cb9cd88b68d7d81253632ba4e09a331246a5&count=30`, {
-	success: successFunction
-})
-```
-
-Ах да, промисы, мы же про них говорим. Дело в том что строчка:
-
-```javascript
-$.ajax(`https://api.unsplash.com/photos/random/?client_id=818fcd1d1047300379afae3e5c33cb9cd88b68d7d81253632ba4e09a331246a5&count=30`)
-```
-
-Возвращает тот самый промис, это он и есть
-
-```javascript
-function getImagesOld() {
-  const promise = $.ajax(`https://api.unsplash.com/photos/random/?client_id=818fcd1d1047300379afae3e5c33cb9cd88b68d7d81253632ba4e09a331246a5&count=30`)
-  return promise;
-}
-```
 
 ## GET, POST, PUT, DELETE
 
@@ -1086,7 +1018,7 @@ function Man2(name, age) {
 Man2('Dimon', 8)
 ```
 
-Если просто вызвать данную функцию, то контекстом вызова вызова будет являться глобальный объект window
+Если просто вызвать данную функцию, то контекстом вызова будет являться глобальный объект window
 
 Это легко можно проверить в консоли браузера после вызова данной функции
 
@@ -1122,7 +1054,7 @@ let m3 = new Man2('Dima', 31);
 
 Прошу заметить что в данном случае контекстом вызова является переменная к которой мы приравниваем функцию с помощью **new**
 
-#### Классы в *JavaScript* были введены в ECMAScript 2015
+#### Классы в *JavaScript* были добавлены в ECMAScript 2015
 
 Давайте проделаем аналогичные действия с помощью классов
 
